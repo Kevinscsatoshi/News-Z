@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mobile Preview · News Z</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="page-header">
+    <a class="brand" href="index.html">News Z</a>
+    <nav class="nav">
+      <a href="index.html#how-it-works">Product</a>
+      <a href="index.html#solana">Solana</a>
+      <a href="index.html#watchlist">Watchlist</a>
+      <a href="index.html#news-feed">Feed</a>
+      <a href="mobile.html" aria-current="page">Mobile</a>
+      <a href="about.html">About</a>
+      <a href="team.html">Team</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main class="mobile-preview">
+    <section class="section mobile-hero" aria-labelledby="mobile-title">
+      <h1 id="mobile-title">The News Z mobile workspace</h1>
+      <p class="mobile-subtitle">Carry the same Solana-anchored intelligence everywhere. The mobile layout mirrors our calm, Notion-like desktop so you can maintain context in transit.</p>
+      <div class="mobile-badges">
+        <span class="badge">iOS available</span>
+        <span class="badge outline">Android beta waitlist</span>
+      </div>
+    </section>
+
+    <section class="section mobile-device-section" aria-label="Mobile preview mockup">
+      <div class="mobile-frame">
+        <div class="mobile-notch"></div>
+        <div class="mobile-screen">
+          <header class="mobile-screen-header">
+            <span class="mobile-time">9:41</span>
+            <div class="mobile-status-icons" aria-hidden="true">
+              <span class="dot"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+            </div>
+          </header>
+          <div class="mobile-screen-content">
+            <div class="mobile-block mobile-block-hero">
+              <h2>Solana intelligence in your pocket</h2>
+              <p>Curated briefs, watchlists, and on-chain receipts synchronize instantly with desktop.</p>
+              <a class="cta inline" href="https://apps.apple.com/app" target="_blank" rel="noopener">Open app</a>
+            </div>
+            <div class="mobile-block mobile-block-watchlist">
+              <div class="mobile-block-header">
+                <h3>Watchlist</h3>
+                <button type="button">＋</button>
+              </div>
+              <ul class="mobile-watchlist">
+                <li><span class="tag">SOL</span></li>
+                <li><span class="tag">Validator health</span></li>
+                <li><span class="tag">Fed policy</span></li>
+              </ul>
+            </div>
+            <div class="mobile-block mobile-block-news">
+              <div class="mobile-block-header">
+                <h3>Latest signals</h3>
+                <span class="mobile-pill">Updated 5m ago</span>
+              </div>
+              <article class="mobile-news-card">
+                <h4>Validator uptime climbs before upgrade</h4>
+                <p>Solana core devs publish release notes confirming QUIC optimizations now live on testnet.</p>
+                <div class="mobile-meta-row">
+                  <span class="badge">Solana Chain AI</span>
+                  <span class="mobile-timecode">12m</span>
+                </div>
+              </article>
+              <article class="mobile-news-card">
+                <h4>Stablecoin flows rotate to Solana DeFi</h4>
+                <p>Wallet clustering points to $74M in net inflows targeting concentrated liquidity pools.</p>
+                <div class="mobile-meta-row">
+                  <span class="badge">Flowsight AI</span>
+                  <span class="mobile-timecode">32m</span>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section mobile-details" aria-label="Mobile feature overview">
+      <div class="mobile-grid">
+        <article class="card">
+          <h3>Notebook parity</h3>
+          <p>Linked pages, callouts, and inline comments feel identical to desktop for seamless knowledge capture.</p>
+        </article>
+        <article class="card">
+          <h3>Realtime Solana status</h3>
+          <p>Validator health, fee markets, and CPI context stream into the nav bar for at-a-glance reassurance.</p>
+        </article>
+        <article class="card">
+          <h3>Gesture-first actions</h3>
+          <p>Swipe to archive briefs, long-press to share on-chain receipts, and pinch to expand charts instantly.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; <span id="year"></span> News Z. Solana-native intelligence for empowered retail investors.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
