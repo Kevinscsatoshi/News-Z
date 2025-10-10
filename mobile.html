@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mobile Preview · News Z</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="mobile-preview">
+  <header class="page-header">
+    <a class="brand" href="index.html">News Z</a>
+    <nav class="nav">
+      <a href="index.html#how-it-works">Product</a>
+      <a href="index.html#solana">Solana</a>
+      <a href="index.html#watchlist">Watchlist</a>
+      <a href="index.html#news-feed">Feed</a>
+      <a href="mobile.html" aria-current="page">Mobile</a>
+      <a href="about.html">About</a>
+      <a href="team.html">Team</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="section mobile-overview">
+      <h1>Mobile workspace preview</h1>
+      <p>See how News Z translates its Solana-based, AI-guided intelligence feed into a calm mobile workspace designed for on-the-go retail investors.</p>
+      <p class="mobile-note">The layout mirrors our current release with watchlists, live signals, and Solana provenance moments away.</p>
+    </section>
+
+    <section class="mobile-preview-wrapper" aria-label="Mobile interface design">
+      <div class="mobile-device" role="presentation">
+        <div class="mobile-notch" aria-hidden="true"></div>
+        <div class="mobile-screen" role="presentation">
+          <div class="mobile-status-bar" aria-hidden="true">
+            <span>09:41</span>
+            <span class="mobile-status-icons">
+              <span class="mobile-signal"></span>
+              <span class="mobile-wifi"></span>
+              <span class="mobile-battery"></span>
+            </span>
+          </div>
+
+          <div class="mobile-block mobile-hero-block">
+            <span class="mobile-pill">Solana anchored</span>
+            <h2>News Z workspace</h2>
+            <p>Curated macro and on-chain intelligence streams straight into a Notion-style hub you can swipe through effortlessly.</p>
+            <div class="mobile-hero-actions">
+              <a class="mobile-cta" href="index.html#watchlist">Open desktop workspace</a>
+              <a class="mobile-store" href="https://apps.apple.com/app" target="_blank" rel="noopener">
+                <img src="app-store-badge.svg" alt="Download on the App Store">
+              </a>
+            </div>
+          </div>
+
+          <div class="mobile-block mobile-watchlist-block">
+            <div class="mobile-block-header">
+              <h3>Watchlist</h3>
+              <button type="button" class="mobile-ghost-btn" aria-label="Add to watchlist">+</button>
+            </div>
+            <p class="mobile-subtext">Swipe to edit the themes you want our AI to monitor.</p>
+            <ul class="mobile-watchlist" aria-label="Watchlist items">
+              <li>SOL</li>
+              <li>Stablecoins</li>
+              <li>Fed policy</li>
+            </ul>
+          </div>
+
+          <div class="mobile-block mobile-feed-block">
+            <h3>Signals</h3>
+            <article class="mobile-feed-card">
+              <header>
+                <h4>Validator uptime steadies into upgrade</h4>
+                <span class="mobile-feed-meta">Solana Chain AI · 8m ago</span>
+              </header>
+              <p>Epoch 498 sees 99.1% performance as Firedancer preview rolls out to validator cohorts you follow.</p>
+              <div class="mobile-tag-row">
+                <span class="mobile-tag">SOL</span>
+                <span class="mobile-tag">Infrastructure</span>
+              </div>
+            </article>
+            <article class="mobile-feed-card">
+              <header>
+                <h4>Stablecoin flows rotate to Solana AMMs</h4>
+                <span class="mobile-feed-meta">Flowsight AI · 22m ago</span>
+              </header>
+              <p>Wallet clustering models flag $74M in inflows into Orca concentrated pools you saved.</p>
+              <div class="mobile-tag-row">
+                <span class="mobile-tag">Stablecoins</span>
+                <span class="mobile-tag">DeFi</span>
+              </div>
+            </article>
+            <article class="mobile-feed-card">
+              <header>
+                <h4>Fed minutes keep data-dependent tone</h4>
+                <span class="mobile-feed-meta">MacroPulse AI · 36m ago</span>
+              </header>
+              <p>Soft-landing mentions rise 18% and trigger a macro brief cross-linked to your policy dashboard.</p>
+              <div class="mobile-tag-row">
+                <span class="mobile-tag">Fed policy</span>
+                <span class="mobile-tag">Macro</span>
+              </div>
+            </article>
+          </div>
+
+          <div class="mobile-block mobile-footer-block">
+            <p>Solana-backed provenance, ready wherever markets move.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; <span id="year"></span> News Z. Solana-native intelligence for empowered retail investors.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
