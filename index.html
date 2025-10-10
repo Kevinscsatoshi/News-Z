@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>News Z · Solana-native intelligence</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="page-header">
+    <a class="brand" href="index.html">News Z</a>
+    <nav class="nav">
+      <a href="index.html#how-it-works">Product</a>
+      <a href="index.html#solana">Solana</a>
+      <a href="index.html#watchlist">Watchlist</a>
+      <a href="index.html#news-feed">Feed</a>
+      <a href="about.html">About</a>
+      <a href="team.html">Team</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="top">
+      <div class="hero-content">
+        <h1>Solana-based global economic intelligence for retail investors</h1>
+        <p class="tagline">News Z blends AI curation with verifiable on-chain signals anchored to Solana's high-throughput ledger.</p>
+        <p class="subtitle">Subscribe to a calm, Notion-inspired workspace where your market perspective stays organized, auditable, and aligned with the assets you actually follow.</p>
+        <div class="hero-actions">
+          <a class="cta" href="#watchlist">Build your watchlist</a>
+          <span class="hero-note">No wallets required to explore. Solana settlement keeps provenance intact.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="how-it-works">
+      <h2>How News Z keeps you ahead</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>AI signal notebooks</h3>
+          <p>Digest macro reports, policy releases, and alternative data in clean briefs automatically structured as linked Notion pages.</p>
+        </article>
+        <article class="card">
+          <h3>Solana time-stamping</h3>
+          <p>Each insight is notarized on Solana for transparent lineage, enabling instant verification of who published what and when.</p>
+        </article>
+        <article class="card">
+          <h3>Personal watch views</h3>
+          <p>Organize assets, sectors, and narratives into bespoke dashboards that surface only what matters to you.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="solana">
+      <h2>Why Solana underpins our data integrity</h2>
+      <div class="stack-card">
+        <p>News Z streams AI-generated memos to a Solana program that immutably records event hashes and analyst attestations. Fast finality and low fees mean even granular retail signals are worth anchoring.</p>
+        <ul>
+          <li>Validator health metrics trigger reliability scores directly in your workspace.</li>
+          <li>Cross-program invocations tie DeFi liquidity shifts to market narratives for instant context.</li>
+          <li>Solana Pay webhooks deliver optional tipping to analysts whose annotations you star.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="watchlist">
+      <div class="section-header">
+        <h2>Your Watchlist</h2>
+        <p>Add tickers, chains, or macro themes to customize the feed below.</p>
+      </div>
+      <form id="watchlist-form" class="watchlist-form">
+        <label for="watchlist-input">Add item</label>
+        <div class="input-group">
+          <input id="watchlist-input" type="text" placeholder="e.g. SOL, BTC, Fed policy" autocomplete="off" required>
+          <button type="submit">Add</button>
+        </div>
+      </form>
+      <ul id="watchlist-items" class="watchlist-items" aria-live="polite"></ul>
+    </section>
+
+    <section class="section" id="news-feed">
+      <div class="section-header">
+        <h2>Live intelligence feed</h2>
+        <p>Stories are grouped by the watchlist items you track. Remove an item to adjust your feed.</p>
+      </div>
+      <div id="news-container" class="news-container" aria-live="polite"></div>
+    </section>
+
+    <section class="section" id="features">
+      <h2>Workflow highlights</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Calm briefing rhythm</h3>
+          <p>Digestible summaries roll into shared pages with backlinks, inline comments, and version history familiar to Notion power users.</p>
+        </article>
+        <article class="card">
+          <h3>Community intelligence</h3>
+          <p>Tap into verified on-chain analysts who annotate signals with context, sentiment, and actionable ideas.</p>
+        </article>
+        <article class="card">
+          <h3>Global coverage</h3>
+          <p>Track monetary policy, commodities, digital assets, and emerging markets with localized reporting translated in real time.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; <span id="year"></span> News Z. Solana-native intelligence for empowered retail investors.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
