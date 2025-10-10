@@ -101,6 +101,12 @@ main {
 }
 
 .hero-actions {
+  display: grid;
+  gap: 0.75rem;
+  align-items: flex-start;
+}
+
+.hero-primary {
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
@@ -129,6 +135,30 @@ main {
 .hero-note {
   font-size: 0.9rem;
   color: var(--muted);
+}
+
+.store-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: calc(var(--radius) + 2px);
+  padding: 0.35rem 0.6rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: 0 6px 16px rgba(17, 17, 17, 0.04);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.store-badge:hover,
+.store-badge:focus {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(17, 17, 17, 0.08);
+  border-color: var(--accent);
+}
+
+.store-badge img {
+  height: 40px;
+  width: auto;
 }
 
 .section {
