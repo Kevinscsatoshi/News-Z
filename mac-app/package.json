@@ -1,0 +1,48 @@
+{
+  "name": "eth-whale-monitor-mac",
+  "version": "1.0.0",
+  "description": "以太坊交易量与巨鲸监控的 macOS 桌面端包装",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build:mac": "electron-builder --mac --x64 --arm64",
+    "build:dir": "electron-builder --dir",
+    "lint": "echo 'No lint step configured'"
+  },
+  "author": "Chain Intelligence Lab",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^28.2.0",
+    "electron-builder": "^24.6.4"
+  },
+  "build": {
+    "appId": "com.chainlab.ethmonitor",
+    "productName": "ETH Whale Monitor",
+    "files": [
+      "**/*",
+      "!dist",
+      "!dist/**/*"
+    ],
+    "directories": {
+      "buildResources": "build"
+    },
+    "mac": {
+      "category": "public.app-category.finance",
+      "target": [
+        "dmg",
+        "zip"
+      ]
+    },
+    "extraResources": [
+      {
+        "from": "../",
+        "to": "renderer",
+        "filter": [
+          "index.html",
+          "script.js",
+          "styles.css"
+        ]
+      }
+    ]
+  }
+}
