@@ -1,111 +1,170 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hans">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>News Z · Solana-native intelligence</title>
+  <title>以太坊链上交易量与巨鲸监控面板</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header class="page-header">
-    <div class="brand">News Z</div>
-    <nav class="nav">
-      <a href="#how-it-works">Product</a>
-      <a href="#solana">Solana</a>
-      <a href="#watchlist">Watchlist</a>
-      <a href="#news-feed">Feed</a>
-    </nav>
+  <header class="app-header">
+    <div>
+      <h1>以太坊链上量化监测</h1>
+      <p class="subtitle">实时追踪交易量趋势，快速识别巨鲸资金动向</p>
+    </div>
+    <div class="header-meta">
+      <span id="last-updated" aria-live="polite">最近更新：--</span>
+      <button id="refresh-all" type="button" class="ghost-button">手动刷新</button>
+    </div>
   </header>
 
   <main>
-    <section class="hero" id="top">
-      <div class="hero-content">
-        <h1>Solana-based global economic intelligence for retail investors</h1>
-        <p class="tagline">News Z blends AI curation with verifiable on-chain signals anchored to Solana's high-throughput ledger.</p>
-        <p class="subtitle">Subscribe to a calm, Notion-inspired workspace where your market perspective stays organized, auditable, and aligned with the assets you actually follow.</p>
-        <div class="hero-actions">
-          <a class="cta" href="#watchlist">Build your watchlist</a>
-          <span class="hero-note">No wallets required to explore. Solana settlement keeps provenance intact.</span>
+    <section class="panel" id="wallet-panel">
+      <div class="panel-header">
+        <div>
+          <h2>OKX 钱包连接中心</h2>
+          <p class="panel-description">连接浏览器中的 OKX Wallet 扩展，快速查看账户信息并为后续链上操作做好准备。</p>
+        </div>
+        <div class="wallet-controls">
+          <button id="wallet-connect" type="button" class="primary-button">连接 OKX 钱包</button>
+          <button id="wallet-refresh" type="button" class="ghost-button" disabled>刷新信息</button>
+        </div>
+      </div>
+
+      <div class="wallet-status-grid" role="list">
+        <article class="metric-card wallet-card" role="listitem">
+          <h3>连接状态</h3>
+          <p id="wallet-status" class="metric-value small" aria-live="polite">未检测</p>
+          <span id="wallet-provider-note" class="metric-note">等待浏览器注入 OKX Wallet。</span>
+        </article>
+        <article class="metric-card wallet-card" role="listitem">
+          <h3>账户地址</h3>
+          <p id="wallet-address" class="metric-value small" title="--">--</p>
+          <button id="wallet-copy" type="button" class="link-button" disabled>复制地址</button>
+        </article>
+        <article class="metric-card wallet-card" role="listitem">
+          <h3>当前网络</h3>
+          <p id="wallet-network" class="metric-value small">--</p>
+          <span class="metric-note">自动识别链 ID。</span>
+        </article>
+        <article class="metric-card wallet-card" role="listitem">
+          <h3>账户余额</h3>
+          <p id="wallet-balance" class="metric-value small">--</p>
+          <span class="metric-note">读取 ETH 主资产余额。</span>
+        </article>
+      </div>
+
+      <div id="wallet-actions" class="wallet-actions" hidden>
+        <div class="wallet-actions-header">
+          <h3>快速操作</h3>
+          <p id="wallet-action-status" aria-live="polite">连接后可以复制地址或在 OKLink 查看账户详情。</p>
+        </div>
+        <div class="wallet-action-buttons">
+          <a id="wallet-explorer" class="ghost-button" href="#" target="_blank" rel="noopener" aria-disabled="true">在 OKLink 查看</a>
+          <button id="wallet-reset" type="button" class="ghost-button subtle">清除连接状态</button>
         </div>
       </div>
     </section>
 
-    <section class="section" id="how-it-works">
-      <h2>How News Z keeps you ahead</h2>
-      <div class="grid">
-        <article class="card">
-          <h3>AI signal notebooks</h3>
-          <p>Digest macro reports, policy releases, and alternative data in clean briefs automatically structured as linked Notion pages.</p>
-        </article>
-        <article class="card">
-          <h3>Solana time-stamping</h3>
-          <p>Each insight is notarized on Solana for transparent lineage, enabling instant verification of who published what and when.</p>
-        </article>
-        <article class="card">
-          <h3>Personal watch views</h3>
-          <p>Organize assets, sectors, and narratives into bespoke dashboards that surface only what matters to you.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="section" id="solana">
-      <h2>Why Solana underpins our data integrity</h2>
-      <div class="stack-card">
-        <p>News Z streams AI-generated memos to a Solana program that immutably records event hashes and analyst attestations. Fast finality and low fees mean even granular retail signals are worth anchoring.</p>
-        <ul>
-          <li>Validator health metrics trigger reliability scores directly in your workspace.</li>
-          <li>Cross-program invocations tie DeFi liquidity shifts to market narratives for instant context.</li>
-          <li>Solana Pay webhooks deliver optional tipping to analysts whose annotations you star.</li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="section" id="watchlist">
-      <div class="section-header">
-        <h2>Your Watchlist</h2>
-        <p>Add tickers, chains, or macro themes to customize the feed below.</p>
-      </div>
-      <form id="watchlist-form" class="watchlist-form">
-        <label for="watchlist-input">Add item</label>
-        <div class="input-group">
-          <input id="watchlist-input" type="text" placeholder="e.g. SOL, BTC, Fed policy" autocomplete="off" required>
-          <button type="submit">Add</button>
+    <section class="panel" id="volume-panel">
+      <div class="panel-header">
+        <div>
+          <h2>链上交易量监控</h2>
+          <p class="panel-description">使用 CoinGecko 市场数据计算 24 小时交易额及 7 天趋势，帮助快速判断资金热度。</p>
         </div>
-      </form>
-      <ul id="watchlist-items" class="watchlist-items" aria-live="polite"></ul>
-    </section>
-
-    <section class="section" id="news-feed">
-      <div class="section-header">
-        <h2>Live intelligence feed</h2>
-        <p>Stories are grouped by the watchlist items you track. Remove an item to adjust your feed.</p>
+        <button id="refresh-volume" type="button" class="ghost-button">刷新交易量</button>
       </div>
-      <div id="news-container" class="news-container" aria-live="polite"></div>
-    </section>
 
-    <section class="section" id="features">
-      <h2>Workflow highlights</h2>
-      <div class="grid">
-        <article class="card">
-          <h3>Calm briefing rhythm</h3>
-          <p>Digestible summaries roll into shared pages with backlinks, inline comments, and version history familiar to Notion power users.</p>
+      <div class="metrics-grid" role="list">
+        <article class="metric-card" role="listitem">
+          <h3>24 小时交易额</h3>
+          <p id="volume-24h" class="metric-value">--</p>
+          <span id="volume-change" class="metric-trend">--</span>
         </article>
-        <article class="card">
-          <h3>Community intelligence</h3>
-          <p>Tap into verified on-chain analysts who annotate signals with context, sentiment, and actionable ideas.</p>
+        <article class="metric-card" role="listitem">
+          <h3>7 日平均交易额</h3>
+          <p id="volume-average" class="metric-value">--</p>
+          <span id="volume-average-note" class="metric-note">--</span>
         </article>
-        <article class="card">
-          <h3>Global coverage</h3>
-          <p>Track monetary policy, commodities, digital assets, and emerging markets with localized reporting translated in real time.</p>
+        <article class="metric-card" role="listitem">
+          <h3>ETH 当前价格</h3>
+          <p id="eth-price" class="metric-value">--</p>
+          <span id="price-change" class="metric-note">--</span>
         </article>
       </div>
+
+      <div class="chart-wrapper" role="img" aria-label="最近 7 天的以太坊交易额折线图">
+        <canvas id="volume-chart"></canvas>
+      </div>
+
+      <div class="table-wrapper">
+        <table aria-describedby="volume-table-caption">
+          <caption id="volume-table-caption">最近 7 天的链上交易额（美元）</caption>
+          <thead>
+            <tr>
+              <th scope="col">日期</th>
+              <th scope="col">交易额</th>
+              <th scope="col">日变化</th>
+            </tr>
+          </thead>
+          <tbody id="volume-table-body">
+            <tr><td colspan="3">数据加载中…</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p id="volume-status" class="status-text" aria-live="polite"></p>
+    </section>
+
+    <section class="panel" id="whale-panel">
+      <div class="panel-header">
+        <div>
+          <h2>巨鲸交易侦测</h2>
+          <p class="panel-description">基于 Blockchair 公共接口筛选高金额转账，快速定位异常大额资金流向。</p>
+        </div>
+        <form id="whale-form" class="threshold-form">
+          <label for="min-value" class="visually-hidden">最小交易额（美元）</label>
+          <span class="input-prefix">&gt;</span>
+          <input id="min-value" name="min-value" type="number" min="100000" step="50000" value="500000" required>
+          <span class="input-suffix">USD</span>
+          <button type="submit">应用阈值</button>
+        </form>
+      </div>
+
+      <div class="insight-box">
+        <h3>今日观察</h3>
+        <p id="whale-insight">正在分析最新的巨鲸行为…</p>
+      </div>
+
+      <div class="table-wrapper">
+        <table aria-describedby="whale-table-caption">
+          <caption id="whale-table-caption">超过阈值的大额交易</caption>
+          <thead>
+            <tr>
+              <th scope="col">时间 (UTC)</th>
+              <th scope="col">发送地址</th>
+              <th scope="col">接收地址</th>
+              <th scope="col">交易额 (USD)</th>
+              <th scope="col">交易额 (ETH)</th>
+              <th scope="col">交易哈希</th>
+            </tr>
+          </thead>
+          <tbody id="whale-table-body">
+            <tr><td colspan="6">数据加载中…</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p id="whale-status" class="status-text" aria-live="polite"></p>
     </section>
   </main>
 
-  <footer class="footer">
-    <p>&copy; <span id="year"></span> News Z. Solana-native intelligence for empowered retail investors.</p>
+  <footer class="app-footer">
+    <p>&copy; <span id="year"></span> 链上情报实验室 · 数据来源：CoinGecko、Blockchair 公共 API</p>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js" defer></script>
 </body>
 </html>
